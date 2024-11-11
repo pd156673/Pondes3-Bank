@@ -17,6 +17,7 @@ const HOST = '0.0.0.0';
 
 // App
 const app = express();
+app.use(express.static('public'))
 app.get('/', (req, res) => {
 
 	// res ist die Antwort des Servers an den Browser.
@@ -30,6 +31,11 @@ app.get('/', (req, res) => {
 	res.render('index.ejs',{});
 });
 
+app.get(
+	'agb', (req, res) => {
+		res.render('agb.ejs'), {};
+	}
+)
 
 // Mit listen() wird der Server angewiesen, auf den angegebenen Host und
 // Port zu lauschen.  
@@ -46,4 +52,4 @@ console.log(`Running on http://${HOST}:${PORT}`);
 //require('./uebungen/01-grundlagen.js');
 //require('./uebungen/03-objekte.js');
 //require('./klausuren/klausur20240930.js');
-require('./uebungen/04-funktionen.js');
+//require('./uebungen/04-funktionen.js');
