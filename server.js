@@ -16,8 +16,14 @@ const PORT = 3000;
 const HOST = '0.0.0.0';
 
 // App
+
 const app = express();
+
+// Es wird der App bekanntgegeben, wo die styles zu finden sind.
 app.use(express.static('public'))
+
+
+
 app.get('/', (req, res) => {
 
 	// res ist die Antwort des Servers an den Browser.
@@ -31,11 +37,43 @@ app.get('/', (req, res) => {
 	res.render('index.ejs',{});
 });
 
-app.get(
-	'agb', (req, res) => {
-		res.render('agb.ejs'), {};
-	}
-)
+// Wenn im Browser die Adresse .../agb aufgerufen wird, wird der Server aufgefordert,
+// die angefragte Seite an den Browser zurückzugeben.
+// Der Server arbeitet dazu die Funktion app.get('agb)... ab.
+app.get('/agb', (req, res) => {
+
+	// Der Server gibt die gerenderte EJS-Seite an den 
+	// Browser zurück.
+	res.render('agb.ejs',{});
+});
+
+app.get('/hilfe', (req, res) => {
+
+	// Der Server gibt die gerenderte EJS-Seite an den 
+	// Browser zurück.
+	res.render('hilfe.ejs',{});
+});
+
+app.get('/postfach', (req, res) => {
+
+	// Der Server gibt die gerenderte EJS-Seite an den 
+	// Browser zurück.
+	res.render('agb.ejs',{});
+});
+
+app.get('/Profil', (req, res) => {
+
+	// Der Server gibt die gerenderte EJS-Seite an den 
+	// Browser zurück.
+	res.render('profil.ejs',{});
+});
+
+app.get('/index', (req, res) => {
+
+	// Der Server gibt die gerenderte EJS-Seite an den 
+	// Browser zurück.
+	res.render('index.ejs',{});
+});
 
 // Mit listen() wird der Server angewiesen, auf den angegebenen Host und
 // Port zu lauschen.  
