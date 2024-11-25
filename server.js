@@ -48,32 +48,38 @@ app.get('/agb', (req, res) => {
 });
 
 app.get('/hilfe', (req, res) => {
-
-	// Der Server gibt die gerenderte EJS-Seite an den 
-	// Browser zurück.
 	res.render('hilfe.ejs',{});
 });
 
-app.get('/postfach', (req, res) => {
-
-	// Der Server gibt die gerenderte EJS-Seite an den 
-	// Browser zurück.
-	res.render('agb.ejs',{});
+app.get('/kontenuebersicht', (req, res) => {
+	res.render('kontenuebersicht.ejs',{});
 });
 
-app.get('/Profil', (req, res) => {
-
-	// Der Server gibt die gerenderte EJS-Seite an den 
-	// Browser zurück.
+app.get('/profil', (req, res) => {
 	res.render('profil.ejs',{});
 });
 
-app.get('/index', (req, res) => {
-
-	// Der Server gibt die gerenderte EJS-Seite an den 
-	// Browser zurück.
-	res.render('index.ejs',{});
+app.get('/postfach', (req, res) => {
+	res.render('postfach.ejs',{});
 });
+
+app.get('/kreditBeantragen', (req, res) => {
+	res.render('kreditBeantragen.ejs',{});
+});
+
+app.get('/ueberweisungAusfuehren', (req, res) => {
+	res.render('ueberweisungAusfuehren.ejs',{});
+});
+
+app.get('/geldanlegen', (req, res) => {
+	res.render('geldanlegen.ejs',{});
+});
+
+app.get('/login', (req, res) => {
+	res.render('login.ejs',{});
+});
+
+
 
 // Mit listen() wird der Server angewiesen, auf den angegebenen Host und
 // Port zu lauschen.  
