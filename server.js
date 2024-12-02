@@ -7,6 +7,12 @@
 
 const express = require('express');
 
+// das modul express wird mit der funktion require einer konstanten namens express zugewiesen
+
+
+
+const bodyparser = require ('body-parser');
+const bodyParser = require('body-parser');
 // Die Anweisungen werden von oben nach unten abgearbeitet. Der Wert 3000 wird von rechts nach links 
 // zugewiesen an die Konstante namens PORT. Das einfache Gleichheitszeichen lässt sich also übersetzen
 // mit "... wird zugewiesen an ..."
@@ -22,7 +28,9 @@ const app = express();
 // Es wird der App bekanntgegeben, wo die styles zu finden sind.
 app.use(express.static('public'))
 
-
+app.use(express.static('public')
+app.set('view engine', 'ejs')
+app.use(bodyParser.urlencoded({extended: true}))
 
 app.get('/', (req, res) => {
 
@@ -74,6 +82,7 @@ app.get('/ueberweisungAusfuehren', (req, res) => {
 app.get('/geldanlegen', (req, res) => {
 	res.render('geldanlegen.ejs',{});
 });
+// die funktion app.get('geldAnlegen.ejs...)
 
 app.get('/login', (req, res) => {
 	res.render('login.ejs',{});
