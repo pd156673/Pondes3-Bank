@@ -28,7 +28,7 @@ const app = express();
 // Es wird der App bekanntgegeben, wo die styles zu finden sind.
 app.use(express.static('public'))
 
-app.use(express.static('public')
+app.use(express.static('public'))
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended: true}))
 
@@ -87,6 +87,8 @@ app.get('/geldanlegen', (req, res) => {
 app.get('/login', (req, res) => {
 	res.render('login.ejs',{});
 });
+
+
 
 
 
